@@ -15,6 +15,7 @@
 		956CFEC023D5579D00FE9F5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956CFEBE23D5579D00FE9F5A /* LaunchScreen.storyboard */; };
 		956CFECB23D5579D00FE9F5A /* TipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956CFECA23D5579D00FE9F5A /* TipCalculatorTests.swift */; };
 		956CFED623D5579D00FE9F5A /* TipCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956CFED523D5579D00FE9F5A /* TipCalculatorUITests.swift */; };
+		95D83CE423DA3B1400CFFFE9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D83CE323DA3B1400CFFFE9 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		956CFED123D5579D00FE9F5A /* TipCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		956CFED523D5579D00FE9F5A /* TipCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorUITests.swift; sourceTree = "<group>"; };
 		956CFED723D5579E00FE9F5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95D83CE323DA3B1400CFFFE9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		956CFEB223D5579800FE9F5A /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				95D83CE323DA3B1400CFFFE9 /* SettingsViewController.swift */,
 				956CFEB323D5579800FE9F5A /* AppDelegate.swift */,
 				956CFEB523D5579900FE9F5A /* SceneDelegate.swift */,
 				956CFEB723D5579900FE9F5A /* ViewController.swift */,
@@ -262,6 +265,7 @@
 				956CFEB823D5579900FE9F5A /* ViewController.swift in Sources */,
 				956CFEB423D5579800FE9F5A /* AppDelegate.swift in Sources */,
 				956CFEB623D5579900FE9F5A /* SceneDelegate.swift in Sources */,
+				95D83CE423DA3B1400CFFFE9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

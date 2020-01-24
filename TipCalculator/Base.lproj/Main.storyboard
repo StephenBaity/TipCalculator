@@ -30,12 +30,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RUK-QG-3JF">
-                                <rect key="frame" x="20" y="318" width="374" height="17"/>
+                                <rect key="frame" x="20" y="318" width="339" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="19C-vK-a81">
-                                <rect key="frame" x="20" y="343" width="374" height="32"/>
+                                <rect key="frame" x="20" y="343" width="339" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="15%"/>
@@ -53,12 +53,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-Ac-yhP">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-Ac-yhP">
                                 <rect key="frame" x="262" y="117" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="billToBeEntered:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="qUu-aQ-0KB"/>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="boP-MI-BB2"/>
                                 </connections>
                             </textField>
@@ -82,7 +83,18 @@
                             <outletCollection property="gestureRecognizers" destination="CQj-aR-CeI" appends="YES" id="2RL-5O-e8b"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="TipCalculator" id="tcK-M8-imu"/>
+                    <navigationItem key="navigationItem" title="TipCalculator" id="tcK-M8-imu">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="fUw-aq-JA7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D0o-GO-Bmz" userLabel="Settings">
+                                <rect key="frame" x="302" y="7" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                            </button>
+                            <connections>
+                                <segue destination="jHX-6c-QmK" kind="show" id="LGe-HQ-mdS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="WaA-Ac-yhP" id="IyY-fK-9vJ"/>
                         <outlet property="tipControl" destination="19C-vK-a81" id="Z67-ip-uC9"/>
@@ -97,7 +109,44 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1047.2" y="138.0809595202399"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="EbC-4X-548">
+            <objects>
+                <viewController id="jHX-6c-QmK" customClass="SettingsViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vnb-JS-Kj3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eeP-dF-WFW" userLabel="Default Tip Control">
+                                <rect key="frame" x="16" y="122" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9N-hQ-4Uw">
+                                <rect key="frame" x="16" y="68" width="153" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PZ5-Dp-Dv1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zgb-UK-drN"/>
+                    <connections>
+                        <outlet property="defaultTipControl" destination="eeP-dF-WFW" id="rrj-Ka-2rL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5k4-Cl-eGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821.5999999999999" y="125.4872563718141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EAs-MK-G57">
